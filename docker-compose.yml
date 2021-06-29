@@ -1,0 +1,15 @@
+version: "3"
+services:
+  php:
+    build: .
+    container_name: php_apache
+    volumes:
+      # Montamos nuestra web desde fuera en el directorio web del contenedor
+      - ./www/:/var/www/html
+    expose:
+      - 80
+    ports:
+      - 80:80
+    # links:
+    #   - mysql
+    #   - phpmyadmin
