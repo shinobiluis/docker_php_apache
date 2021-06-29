@@ -6,10 +6,16 @@ services:
     volumes:
       # Montamos nuestra web desde fuera en el directorio web del contenedor
       - ./www/:/var/www/html
+      # Creamos volumen de la configuracion del php.ini
+      - ./phpini/php.ini:/usr/local/etc/php/php.ini:rw
+      # Configuramos como volumen el timezone para que el php tome la hora correcta
+      - ./phpini/99-timezone.ini:/usr/local/etc/php/conf.d/99-timezone.ini:rw
+      # Hacemos que la imagen tenga la misma hora que el servidor
+      - /usr/share/zoneinfo/America/Mexico_City:/etc/localtime
+      # Creamos el volumen de la carpeta sites-available sites-available
+      - ./apacheConf/sites-available/000-default.conf:/etc/apache2/sites-available/000-default.conf:rw 
+      - ./apacheConf/sites-available/default-ssl.conf:/etc/apache2/sites-available/default-ssl.conf:rw
     expose:
       - 80
     ports:
       - 80:80
-    # links:
-    #   - mysql
-    #   - phpmyadmin
