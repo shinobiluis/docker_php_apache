@@ -50,12 +50,25 @@ SUPPORT_URL="https://www.debian.org/support"
 BUG_REPORT_URL="https://bugs.debian.org/"
 ```
 
+# Validar Java
 
+Si quieres validar el funcionamiento de java puedes escribir y ejecutar un hola mundo.
+Dendtro del docker puedes crear un archivo
 
+`vim HolaMundo.java`
 
+Y dentro de el escribir:
 
+```java
+public class HolaMundo {
 
-<!-- apache -->
-<!-- /etc/apache2/sites-available -->
-<!-- /etc/apache2/sites-enabled -->
-<!--  -->
+	public static void main(String[] args) {		
+		System.out.println("Hola Mundo");
+	}
+
+}
+```
+Para compilar y ejecutar este código tendremos que ejecutar las siguientes sentencias:
+
+`javac HolaMundo.java
+java HolaMundo`
