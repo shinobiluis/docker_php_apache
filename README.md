@@ -28,6 +28,13 @@ Dentro del docker podras ejecutar:
 
 `apachectl -v`
 
+# Java version
+
+Dentro del docker podras ejecutar:
+
+`java -version`
+
+
 La version intalada es: Apache/2.4.38
 
 # Sistema Versión
@@ -70,5 +77,9 @@ public class HolaMundo {
 ```
 Para compilar y ejecutar este código tendremos que ejecutar las siguientes sentencias:
 
-`javac HolaMundo.java
-java HolaMundo`
+`javac HolaMundo.java`
+`java HolaMundo`
+
+# Acceder al sitio
+
+El código del sitio esta en la carpeta www y es un volumen por lo que todo lo que se configure en el sera visible desde el puerto 80 del navegador, para acceder a el en tu navegador escribe la siguiente url: `http://localhost/` ahi veras un php info con la inforamción del php.
